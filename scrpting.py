@@ -79,15 +79,15 @@ for i in df.index:
     with open(filename_input+".csv" , "w", newline="") as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames = fieldnames)
 
-    writer.writeheader()
-    for data_row in data_out:
-        writer.writerow({fieldnames[0]: data_row[0],
-                            fieldnames[1]: data_row[1],
-                            fieldnames[2]: data_row[2],
-                            fieldnames[3]: data_row[3],
-                            fieldnames[4]: data_row[4],
-                            fieldnames[5]: data_row[5],
-                            fieldnames[6]: data_row[6],
-                            fieldnames[7]: data_row[7]})
-                     
+        writer.writeheader()
+        for data_row in data_out:
+            writer.writerow({fieldnames[0]: data_row[0],
+                                fieldnames[1]: data_row[1],
+                                fieldnames[2]: data_row[2],
+                                fieldnames[3]: data_row[3],
+                                fieldnames[4]: data_row[4],
+                                fieldnames[5]: data_row[5],
+                                fieldnames[6]: data_row[6],
+                                fieldnames[7]: data_row[7]})
+                        
                      
