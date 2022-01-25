@@ -1,8 +1,6 @@
 import pandas as pd
 import os
-print("inset the directory to your .csv file here:")
-csv = "./testinputs.csv"
-
+csv = input("inset the directory to your .csv file here:")
 df = pd.read_csv(csv)
 
 for i in range(1):
