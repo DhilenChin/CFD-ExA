@@ -18,12 +18,17 @@ for i in df.index:
     f.write(str(df['Flow Type'][i]))
     f.close()
     os.system("./deltagen < temp.txt")
-    name = 'tblock' + '-' + str(df['Mach number'][i]) + '-' +  str(df['Sweep angle'][i]) + '-' +  str(df['Angle of Attack'][i]) + '-' + str(df['Flow Type'][i])+'.dat'
-    os.rename("./delta-tblock.dat", name)
+    name = 'tblock' + '-' + str(df['Mach number'][i]) + '-' +  str(df['Sweep angle'][i]) + '-' +  str(df['Angle of Attack'][i]) + '-' + str(df['Flow Type'][i])
+    os.rename("./delta-tblock.dat", name + '.dat')
 
-    os.system('./tblock < ' + name+ ' > ' + name + '.txt')
-    os.rename('flow1-1.vtu', name + 'flow1.vtu')
-    os.rename('flow1-2.vtu', name + 'flow2.vtu')
+    os.system('./tblock < ' + name + '.dat'+ ' > ' + name + '.txt')
+    try:
+
+        os.rename('flow-1.vtu', name + 'flow1.vtu')
+        os.rename('flow-2.vtu', name + 'flow2.vtu')
+    except:
+        pass
+
     import csv
 
     filename_input = name
