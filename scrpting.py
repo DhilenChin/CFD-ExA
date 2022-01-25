@@ -3,7 +3,7 @@ import os
 csv = input("inset the directory to your .csv file here:")
 df = pd.read_csv(csv)
 
-for i in range(1):
+for i in df.index:
     f = open('temp.txt', 'w')
     f.write(str(df['Mach number'][i]) + '\n')
     f.write(str(df['Reynolds number'][i]) + '\n')
