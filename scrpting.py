@@ -23,4 +23,4 @@ for i in range(1):
     name = 'tblock' + '-' + str(df['Mach number'][i]) + '-' +  str(df['Sweep angle'][i]) + '-' +  str(df['Angle of Attack'][i]) + '-' + str(df['Flow Type'][i])+'.dat'
     os.rename("delta-tblock.dat", name)
 
-    os.system('./tblock < ' + name +' > store.txt')
+    os.system('./tblock < ' + name)
